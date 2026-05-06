@@ -8,9 +8,21 @@ services:
       POSTGRES_USER:      ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD:  ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB:        ${POSTGRES_DB:-scrummy_word_count}
+
+      MOMO_PWD: ${MOMO_PWD:-secret1}
+      JAMIE_PWD: ${JAMIE_PWD:-secret2}
+      ANDERS_PWD: ${ANDERS_PWD:-secret3}
+      SERVICE_PWD: ${SERVICE_PWD:-serviceSecret}
+
     volumes:
-      - pg:/var/lib/postgresql
-      - ./scripts/database-setup/initDB.sh:/docker-entrypoint-initdb.d/initDB.sh
+      - pg:/var/lib/postgresql/data
+      - ./scripts/database-setup:/docker-entrypoint-initdb.d
+      - ./configs/pg_hba.conf:/etc/postgresql/pg_hba.conf
+
+    command: >
+      postgres
+      -c hba_file=/etc/postgresql/pg_hba.conf
+      -c password_encryption=scram-sha-256
 
 volumes:
   pg:
