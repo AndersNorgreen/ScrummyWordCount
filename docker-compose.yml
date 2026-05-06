@@ -3,13 +3,14 @@ services:
     image: postgres:latest
     restart: always
     ports:
-      - "5432:5432"
+      - "5434:5432"
     environment:
       POSTGRES_USER:      ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD:  ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB:        ${POSTGRES_DB:-scrummy_word_count}
     volumes:
       - pg:/var/lib/postgresql
+      - ./scripts/database-setup/initDB.sh:/docker-entrypoint-initdb.d/initDB.sh
 
 volumes:
   pg:
