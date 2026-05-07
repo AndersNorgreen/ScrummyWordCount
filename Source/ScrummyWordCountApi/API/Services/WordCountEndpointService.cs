@@ -6,11 +6,11 @@ namespace ScrummyWordCountApi.API.Services;
 
 public class WordCountEndpointService(IWordCountService wordCountService) : IWordCountEndpointService
 {
-    public async Task<IResult> CountWords(WordCountRequestDto request)
+    public async Task<IResult> CountWordsAsync(WordCountRequestDto request)
     {
         try
         {
-            var result = await wordCountService.CountWordAsync(
+            var result = await wordCountService.CountAndSaveAsync(
                 request.Url,
                 request.SearchWord,
                 request.TextToSearch);
@@ -21,7 +21,7 @@ public class WordCountEndpointService(IWordCountService wordCountService) : IWor
         }
         catch (Exception ex)
         {
-            return Results.BadRequest(ex.Message);
+            return Results.BadRequest("An error occured while counting words :(");
         }
     }
 }

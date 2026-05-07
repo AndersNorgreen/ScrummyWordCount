@@ -4,5 +4,5 @@ namespace ScrummyWordCountApi.API.Services.Interfaces;
 
 public interface IWordCountEndpointService
 {
-    Task<IResult> CountWords(WordCountRequestDto request);
+    Task<IResult> CountWordsAsync(WordCountRequestDto request);
 }

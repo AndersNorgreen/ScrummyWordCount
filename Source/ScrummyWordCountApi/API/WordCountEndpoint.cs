@@ -10,6 +10,6 @@ public static class WordCountEndpoint
         app.MapPost(
             "/api/wordcount", 
             async (WordCountRequestDto request, IWordCountEndpointService wordCountEndpointService) => 
-                await wordCountEndpointService.CountWords(request));
+                await wordCountEndpointService.CountWordsAsync(request));
     }
 }
