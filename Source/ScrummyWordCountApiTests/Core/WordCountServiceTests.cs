@@ -13,24 +13,24 @@ public class WordCountServiceTests
                 .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options));
 
-    private readonly WordCountService _sut = CreateSut();
-
     [Fact]
-    public async Task CountWordAsync_ReturnsCorrectCount()
+    public async Task CountAndSaveAsync_ReturnsCorrectCount()
     {
+        var sut = CreateSut();
         var words = new[] { "hello", "world", "hello", "Anders" };
 
-        var result = await _sut.CountWordAsync("https://example.com", "hello", words);
+        var result = await sut.CountAndSaveAsync("https://example.com", "hello", words);
 
         Assert.Equal(2, result);
     }
 
     [Fact]
-    public async Task CountWordAsync_IsCaseInsensitive()
+    public async Task CountAndSaveAsync_IsCaseInsensitive()
     {
+        var sut = CreateSut();
         var words = new[] { "Hello", "HELLO", "hello" };
 
-        var result = await _sut.CountWordAsync("https://example.com", "hello", words);
+        var result = await sut.CountAndSaveAsync("https://example.com", "hello", words);
 
         Assert.Equal(3, result);
     }
@@ -43,32 +43,17 @@ public class WordCountServiceTests
 
     [Theory]
     [MemberData(nameof(NoResultCases))]
-    public async Task CountWordAsync_ReturnsZero(string[] pageWords)
+    public async Task CountAndSaveAsync_ReturnsZero(string[] pageWords)
     {
-        var result = await _sut.CountWordAsync("https://example.com", "hello", pageWords);
+        var sut = CreateSut();
+
+        var result = await sut.CountAndSaveAsync("https://example.com", "hello", pageWords);
 
         Assert.Equal(0, result);
     }
 
     [Fact]
-    public async Task SaveSearchAsync_PersistsRecordToDatabase()
-    {
-        var context = new ScrummyWordCountContext(
-            new DbContextOptionsBuilder<ScrummyWordCountContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                .Options);
-        var sut = new WordCountService(context);
-
-        await sut.SaveSearchAsync("https://example.com", "hello", 5);
-
-        var saved = Assert.Single(context.Searches);
-        Assert.Equal("https://example.com", saved.Url);
-        Assert.Equal("hello", saved.Searchquery);
-        Assert.Equal(5, saved.Numberofoccurrences);
-    }
-
-    [Fact]
-    public async Task CountAndSaveAsync_ReturnsCountAndPersistsRecord()
+    public async Task CountAndSaveAsync_PersistsRecordToDatabase()
     {
         var context = new ScrummyWordCountContext(
             new DbContextOptionsBuilder<ScrummyWordCountContext>()
