@@ -6,13 +6,10 @@ namespace ScrummyWordCountApi.Core.Services;
 
 public class WordCountService(ScrummyWordCountContext context) : IWordCountService
 {
-    public Task<int> CountWordAsync(string url, string word, IEnumerable<string> pageWords)
-    {
-        var count = pageWords.Count(pageWord => string.Equals(pageWord, word, StringComparison.OrdinalIgnoreCase));
-        return Task.FromResult(count);
-    }
+    private static int CountWord(string word, IEnumerable<string> pageWords) =>
+        pageWords.Count(pageWord => string.Equals(pageWord, word, StringComparison.OrdinalIgnoreCase));
 
-    public async Task SaveSearchAsync(string url, string word, int count)
+    private async Task SaveSearchAsync(string url, string word, int count)
     {
         context.Searches.Add(new Search
         {
@@ -27,7 +24,7 @@ public class WordCountService(ScrummyWordCountContext context) : IWordCountServi
 
     public async Task<int> CountAndSaveAsync(string url, string word, IEnumerable<string> pageWords)
     {
-        var count = await CountWordAsync(url, word, pageWords);
+        var count = CountWord(word, pageWords);
         await SaveSearchAsync(url, word, count);
         return count;
     }
