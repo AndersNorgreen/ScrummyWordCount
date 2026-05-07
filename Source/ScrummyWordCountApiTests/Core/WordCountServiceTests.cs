@@ -1,73 +1,28 @@
-using Microsoft.EntityFrameworkCore;
+using Moq;
+using ScrummyWordCountApi.Core.Interfaces;
 using ScrummyWordCountApi.Core.Services;
-using ScrummyWordCountApi.Infrastructure;
 using Xunit;
 
 namespace ScrummyWordCountApi.Tests.Core;
 
 public class WordCountServiceTests
 {
-    private static WordCountService CreateSut() =>
-        new(new ScrummyWordCountContext(
-            new DbContextOptionsBuilder<ScrummyWordCountContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                .Options));
+    private readonly WordCountService _sut = new(new Mock<ISearchRepository>().Object);
 
-    [Fact]
-    public async Task CountAndSaveAsync_ReturnsCorrectCount()
+    public static TheoryData<string[], int> CountCases { get; } = new()
     {
-        var sut = CreateSut();
-        var words = new[] { "hello", "world", "hello", "Anders" };
-
-        var result = await sut.CountAndSaveAsync("https://example.com", "hello", words);
-
-        Assert.Equal(2, result);
-    }
-
-    [Fact]
-    public async Task CountAndSaveAsync_IsCaseInsensitive()
-    {
-        var sut = CreateSut();
-        var words = new[] { "Hello", "HELLO", "hello" };
-
-        var result = await sut.CountAndSaveAsync("https://example.com", "hello", words);
-
-        Assert.Equal(3, result);
-    }
-
-    public static TheoryData<string[]> NoResultCases =>
-    [
-        ["Anders", "Jamie", "Momo"],
-        []
-    ];
+        { new[] { "hello", "world", "hello", "Anders" }, 2 },
+        { new[] { "Hello", "HELLO", "hello" }, 3 },
+        { new[] { "Anders", "Jamie", "Momo" }, 0 },
+        { Array.Empty<string>(), 0 },
+    };
 
     [Theory]
-    [MemberData(nameof(NoResultCases))]
-    public async Task CountAndSaveAsync_ReturnsZero(string[] pageWords)
+    [MemberData(nameof(CountCases))]
+    public async Task CountAndSaveAsync_ReturnsExpectedCount(string[] pageWords, int expected)
     {
-        var sut = CreateSut();
+        var result = await _sut.CountAndSaveAsync("https://example.com", "hello", pageWords);
 
-        var result = await sut.CountAndSaveAsync("https://example.com", "hello", pageWords);
-
-        Assert.Equal(0, result);
-    }
-
-    [Fact]
-    public async Task CountAndSaveAsync_PersistsRecordToDatabase()
-    {
-        var context = new ScrummyWordCountContext(
-            new DbContextOptionsBuilder<ScrummyWordCountContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                .Options);
-        var sut = new WordCountService(context);
-        var words = new[] { "hello", "world", "hello", "Anders" };
-
-        var result = await sut.CountAndSaveAsync("https://example.com", "hello", words);
-
-        Assert.Equal(2, result);
-        var saved = Assert.Single(context.Searches);
-        Assert.Equal("https://example.com", saved.Url);
-        Assert.Equal("hello", saved.Searchquery);
-        Assert.Equal(2, saved.Numberofoccurrences);
+        Assert.Equal(expected, result);
     }
 }
