@@ -26,7 +26,6 @@ public partial class ScrummyWordCountContext : DbContext
             entity.Property(e => e.Numberofoccurrences).HasColumnName("numberofoccurrences");
             entity.Property(e => e.Searchedat)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                .HasColumnType("timestamp without time zone")
                 .HasColumnName("searchedat");
             entity.Property(e => e.Searchquery)
                 .HasMaxLength(255)
