@@ -13,6 +13,8 @@ builder.AddCors();
 
 builder.AddDependencies();
 
+builder.AddDependencyInjection();
+
 var app = builder.Build();
 
 app.AddEndpoints();
