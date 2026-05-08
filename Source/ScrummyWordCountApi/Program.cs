@@ -10,7 +10,6 @@ if(builder.Environment.IsDevelopment())
 builder.ConfigureDatabase();
 
 builder.AddCors();
-
 builder.AddDependencies();
 
 builder.AddDependencyInjection();
@@ -18,6 +17,7 @@ builder.AddDependencyInjection();
 var app = builder.Build();
 
 app.AddEndpoints();
+app.UseCors("AllowAll");
 
 app.MapGet("/", () => "It's alive!");
 

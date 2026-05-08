@@ -5,7 +5,7 @@ namespace ScrummyWordCountApi.Core.Services;
 public class WordCountService(ISearchRepository repository) : IWordCountService
 {
     private static int CountWord(string word, IEnumerable<string> pageWords) =>
-        pageWords.Count(pageWord => string.Equals(pageWord, word, StringComparison.OrdinalIgnoreCase));
+        pageWords.Count(pageWord => pageWord.Contains(word,  StringComparison.OrdinalIgnoreCase));
 
     public async Task<int> CountAndSaveAsync(string url, string word, IEnumerable<string> pageWords)
     {
