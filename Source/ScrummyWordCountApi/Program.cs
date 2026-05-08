@@ -15,6 +15,8 @@ builder.AddDependencies();
 
 var app = builder.Build();
 
+app.AddEndpoints();
+
 app.MapGet("/", () => "It's alive!");
 
 // Configure the HTTP request pipeline.
