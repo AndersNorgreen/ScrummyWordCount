@@ -32,9 +32,10 @@ services:
       DOTNET_USE_POLLING_WATCHER: 1
       DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER: true
       DOTNET_RUNNING_IN_CONTAINER: true
+
+      ConnectionStrings__ScrummyWordCountDB: ${POSTGRES_CONNECTION_STRING:-Host=postgres;Port=5432;Database=scrummy_word_count;Username=postgres;Password=postgres}
     volumes:
       - ./Source:/Source
-      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
 
       # Override the bin and obj folders to support hot reloading
       - /Source/ScrummyWordCountApi/bin
