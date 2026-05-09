@@ -8,10 +8,8 @@ if(builder.Environment.IsDevelopment())
     builder.Configuration.AddUserSecrets<Program>();
 
 builder.ConfigureDatabase();
-
 builder.AddCors();
 builder.AddDependencies();
-
 builder.AddDependencyInjection();
 
 var app = builder.Build();

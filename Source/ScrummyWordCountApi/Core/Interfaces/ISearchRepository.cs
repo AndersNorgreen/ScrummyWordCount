@@ -4,5 +4,5 @@ namespace ScrummyWordCountApi.Core.Interfaces;
 
 public interface ISearchRepository
 {
-    Task AddAsync(string searchWord, string url, string[] searchedText, int wordCount);
+    Task<Search> AddAsync(string searchWord, string url, int wordCount);
 }
