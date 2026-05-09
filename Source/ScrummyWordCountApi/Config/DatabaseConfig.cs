@@ -10,6 +10,12 @@ public static class DatabaseConfig
         builder.Configuration.AddUserSecrets<Program>(); 
         
         var scrummyWordCountConnectionString = builder.Configuration.GetConnectionString("ScrummyWordCountDB");
-        builder.Services.AddDbContext<ScrummyWordCountContext>(options => options.UseNpgsql(scrummyWordCountConnectionString));
+        builder.Services.AddDbContext<ScrummyWordCountContext>(options => options.UseNpgsql(scrummyWordCountConnectionString, opt =>
+        {
+            opt.EnableRetryOnFailure(
+                maxRetryCount: 5, 
+                maxRetryDelay: TimeSpan.FromSeconds(10), 
+                errorCodesToAdd: null);
+        }));
     }
 }

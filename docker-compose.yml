@@ -24,5 +24,27 @@ services:
       -c hba_file=/etc/postgresql/pg_hba.conf
       -c password_encryption=scram-sha-256
 
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DOTNET_USE_POLLING_WATCHER: 1
+      DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER: true
+      DOTNET_RUNNING_IN_CONTAINER: true
+    volumes:
+      - ./Source:/Source
+      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+
+      # Override the bin and obj folders to support hot reloading
+      - /Source/ScrummyWordCountApi/bin
+      - /Source/ScrummyWordCountApi/obj
+
+      - /Source/ScrummyWordCountApiTests/bin
+      - /Source/ScrummyWordCountApiTests/obj
+    ports:
+      - "5012:5012"
+    command: dotnet watch run --no-hot-reload -v normal --project Source/ScrummyWordCountApi/ScrummyWordCountApi.csproj --urls http://0.0.0.0:5012
+
 volumes:
   pg:
