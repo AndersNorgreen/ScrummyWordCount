@@ -2,6 +2,7 @@ using ScrummyWordCountApi.API.Services;
 using ScrummyWordCountApi.API.Services.Interfaces;
 using ScrummyWordCountApi.Core.Interfaces;
 using ScrummyWordCountApi.Core.Services;
+using ScrummyWordCountApi.Infrastructure.Repositories;
 
 namespace ScrummyWordCountApi.Config;
 

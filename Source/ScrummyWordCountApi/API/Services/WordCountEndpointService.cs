@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using ScrummyWordCountApi.API.DTO;
 using ScrummyWordCountApi.API.Services.Interfaces;
 using ScrummyWordCountApi.Core.Interfaces;
@@ -21,6 +22,7 @@ public class WordCountEndpointService(IWordCountService wordCountService) : IWor
         }
         catch (Exception ex)
         {
+            Debug.WriteLine(ex.Message);
             return Results.BadRequest("An error occured while counting words :(");
         }
     }

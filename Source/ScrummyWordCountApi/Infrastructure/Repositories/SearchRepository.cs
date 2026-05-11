@@ -1,7 +1,8 @@
-using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 using ScrummyWordCountApi.Core.Interfaces;
 using ScrummyWordCountApi.Core.Models;
-using ScrummyWordCountApi.Infrastructure;
+
+namespace ScrummyWordCountApi.Infrastructure.Repositories;
 
 public class SearchRepository : ISearchRepository
 {
@@ -12,17 +13,27 @@ public class SearchRepository : ISearchRepository
         _context = context;
     }
 
-    public async Task AddAsync(string  searchWord, string url, string[] searchedText, int wordCount)
+    public async Task<Search> AddAsync(string searchWord, string url, int wordCount)
     {
-        var search = new Search()
+        try
         {
-            Url = url,
-            Searchquery = searchWord,
-            Numberofoccurrences = wordCount,
-            Searchedat = DateTime.UtcNow
-        };
+            var search = new Search()
+            {
+                Url = url,
+                Searchquery = searchWord,
+                Numberofoccurrences = wordCount,
+                Searchedat = DateTime.UtcNow
+            };
 
-        _context.Searches.Add(search);
-        await _context.SaveChangesAsync();
+            _context.Searches.Add(search);
+            await _context.SaveChangesAsync();
+
+            return search;
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.Message);
+            throw;
+        }
     }
 }

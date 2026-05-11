@@ -2,7 +2,7 @@ using ScrummyWordCountApi.Core.Interfaces;
 
 namespace ScrummyWordCountApi.Core.Services;
 
-public class WordCountService(ISearchRepository repository) : IWordCountService
+public class WordCountService(ISearchRepository _repository) : IWordCountService
 {
     private static int CountWord(string word, IEnumerable<string> pageWords) =>
         pageWords.Count(pageWord => pageWord.Contains(word,  StringComparison.OrdinalIgnoreCase));
@@ -11,7 +11,9 @@ public class WordCountService(ISearchRepository repository) : IWordCountService
     {
         var words = pageWords.ToArray();
         var count = CountWord(word, words);
-        await repository.AddAsync(word, url, words, count);
+        
+        await _repository.AddAsync(word, url, count);
+        
         return count;
     }
 }
