@@ -18,7 +18,7 @@ Kunden har et behov for et monitorerings system hvor de kan søge efter mistænk
 På nuværende tidspunkt, kan systemet søge efter et ord, og finde mængden af forekomster på den hjemmeside du har valgt og søge på og logger det i databasen.
 
 ***Hvordan fungerer systemet i dag?***
-Systemet giver på nuværende tidspunkt mulighed for at søge efter et specifikt ord på en URL. Når du søger efter ordet, aflæser programmet forekomster på den givne hjemmeside, og logger dem i databasen.
+Brugeren indtaster et ord og en URL i Next.js frontend'en. Playwright scraper derefter indholdet af den angivne hjemmeside og sender en POST-request til C# API'en med det scrapede indhold og søgeordet. API'en gennemgår indholdet, tæller forekomster af ordet og returnerer resultatet til frontend'en. Søgningen og resultatet logges efterfølgende i databasen.
 
 ***Hvilke data gemmes?***
 Ud fra søgningen gemmes der et ID, tidspunkt for søgning, URL'en der er søgt på, ordet der er søgt på og antal af forekomster.
