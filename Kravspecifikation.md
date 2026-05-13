@@ -3,7 +3,10 @@
 ### 1.1. _Formål_
 
 Denne kravspecifikation beskriver kravene til videreudviklingen af systemet **ScrummyWordCount**.
-Systemet er udviklet til et anerkendt it-sikkerhedsfirma, som ønsker at automatisere overvågning af hjemmesider for forekomster af mistænkelige søgeord. V1 af systenmet er allerede leveret. Denne kravspecifikation omhandlder de nye krav som kunden ønsker implementeret til en fremtidig V2.
+
+Systemet er udviklet til et anerkendt it-sikkerhedsfirma, som ønsker at automatisere overvågning af hjemmesider for forekomster af mistænkelige søgeord. 
+
+V1 af systemet er allerede leveret. Denne kravspecifikation omhandlder de nye krav som kunden ønsker implementeret til en fremtidig V2.
 
 - **Produkt:** ScrummyWordCount v2
 - **Kunde:** It-sikkerhedsfirma (anonymiseret)
@@ -36,39 +39,34 @@ ScrummyWordCount er et webbaseret overvågningssystem bestående af en Next.js f
 
 ---
 
-- Verdensbillede, en tegning af det totale system.
-- Kort beskrivelse af hardwaren.
-- Kort beskrivelse af softwaren.
-- Det totale HW + SW (verdensbillede)
-- Tilhørende forklaring
-
----
-
 ### 2.2 System funktion
 
-Brugeren indtaster en liste af URL'er og søgeord i UI'et, som gemmes i databasen.
+Brugeren indtaster en liste af URL'er og søgeord i UI'et, som basis for programmets funktionalitet.
 
 Systemet scanner automatisk alle URL'er for alle søgeord to gange dagligt via automatiske jobs i C# API'en, som scraper de ønskede sider og gemmer resultaterne i databasen.
 
-Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
+Hvis en side ikke kan scannes er der tilføjet retry-funktionalitet. Lykkes det ikke efter det definerede antal forsøg, logges fejlen og en advarsel sendes på mail. Siden skannes igen næste gang, jobbet kører.
 
 ---
 
 2.3. _System begrænsninger_
 
-Da programmet er opsat med automatisering (på to tidspunkter hver dag), vil realtidsovervågning ikke være muligt.
+Da programmet er opsat med automatisering (på to tidspunkter hver dag), vil realtidsovervågning ikke være muligt under programmets nuværende udformning.
 
-Samtidig vil der ikke være nogen bruger autorisation/adgangskontrol.
+Data kan heller ikke eksporteres via UI.
 
-Dataeksport vil heller ikke være en mulighed, men det vil være en af vores fremtidsmuligheder.
+Samtidig vil der ikke være nogen brugerautorisation/adgangskontrol.
+
 2.4. _Systemets fremtid_
 Programmets forventes at være i produktion indtil sikkerhedsfirmaet ikke længere har behov for det.
 
-Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervågning.
+Fremtidsmuligheder vil være features som dataeksport, og evt. realtidsovervågning.
 
 ---
 
-### 2.5 Brugerprofil
+2.5 _Brugerprofil_
+
+Der regnes med følgende brugerprofiler i programmets levetid.
 
 **Analytiker**
 
@@ -89,111 +87,112 @@ Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervåg
 - Har ikke nødvendigvis teknisk baggrund
 - Primær kontaktperson for kravafklaring og videreudvikling
 
-### 2.6 Krav til udviklingsforløbet
+2.6 _Krav til udviklingsforløbet_
 
 - **Metode:** Scrum
 - **Versionsstyring:** Git / GitHub
 - **Programmeringssprog:** TypeScript (frontend), C# (backend)
-- **Dokumentation:** Casebeskrivelse, kravspecifikation, testrapport
+- **Dokumentation:** Casebeskrivelse, kravspecifikation, testrapport samt flow chart og use-case diagram.
 - **Review:** Pull requests gennemgås af mindst ét andet teammedlem inden merge
 - **Ændringer i kravspec:** Godkendes af PO og Project Lead i fællesskab.
-  git
 
 ---
 
-### 2.7 Omfang af kundeleverance
+2.7 _Omfang af kundeleverance_
 
-Følgende leveres til kunden:
+Det forventes at nærværende systemopdateringer til ScrummyWordCount prodsættes som en enkelt samlet leverance. 
+Kunden vil således kun opleve en kort nedetid på den eksisterende løsning, før de nye funktioner kan tages i brug.
 
-- Kørende system (Docker Compose)
-- Kravspecifikation
-- Brugervejledning
+Efter behov kan ScrummyWordCount-teamet tilbyde instruktion og brugervejledning til de nye features.
+
+ScrummyWordCount teamet fastholder ejerskab over kodebasen.
 
 ---
 
 2.8. _Forudsætninger_
 Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCount-teamet adgang til at tilgå serveren.
 
-3. **Specifikke Krav**
+### 3.  **Specifikke Krav**
 
-   3.1. _Definitioner_
-   - Formatet på væsentlige data, som kunden ønsker fastlagt fra starten. - Design af specielle kommunikationsprotokoller (programmør)
-     3.2. _Funktionelle krav_
-   - Når I skal til dette punkt så tjek længere nede, der står der oplysninger om USE CASES, det ville være smart at placere disse her.
-   - Beskrivelse af hver af de funktionaliteter, som programmet består af. Det være sig funktionaliteter, som brugeren oplever, men også funktionaliteter, der er væsentlige for programmets funktion.
-   - Beskriv hvis der er noget særligt omhandlende input og output fra HW til SW eller omvendt.
-     - Systematisk beskrivelse af alle funktionalitet er i systemet evt. med punkter og underpunkter
-     - Skitse af komplet brugergrænseflade
+3.1. _Definitioner_
 
-4. **Eksterne grænseflade krav**
+Kunden ønsker mulighed for indtastning af to lister: en til søgeord og en til websites.
+Dertil ønskes mulighed for dataudtræk, hvor det skal være muligt at se:
+- Det anvendte søgeord
+- Den gennemsøgte hjemmeside
+- Dato og tidspunkt for søgningen
+- Antallet af gange søgeordet forekom
 
-   4.1. _Bruger grænseflade_
-   - Krav til måden programmet betjenes på: Menuer/ mus/ tastatur.
-   - Forskellige brugeres rettigheder til brug af forskellige funktioner.
+3.2. _Funktionelle krav_
 
-     4.2. _Hardware grænseflade_
+Use case forefindes i dokumentationspakken som vedlægges leverancen.
 
-   - Hvordan er delene i systemet hardwaremæssigt bygget sammen
-   - På hvilken elektrisk form optræder informationerne. - Protokol, netværkstype (evt. bilagshenvisning) - I/O-karakteristika (evt. bilagshenvisning) (programmør)
-     4.3. _Software grænseflade_
-   - Operativsystemet som programmellet skal køre under.
-   - Benyttelse af prædefinerede softwaremoduler.
-   - Grænseflade til anden del af programmet, hvis projektet er en del af et større system. - Operativsystem
-     4.4. _Kommunikations grænseflade_
-     De fleste elever har ikke noget her.)
-   - Overordnet kommunikationsprotokol.
-   - Detaljeret kommunikationsprotokol, hvis det er et krav fra kunden, evt. under specifikationer.
+Der skal kunne søges bredt, både på flere ord og over flere hjemmesider.
 
-5. **Krav til programmellets ydelse**
-   - Specifikke tidskrav til udførelse af bestemte funktioner.
-   - Krav til det eksekverbare programs størrelse.
-     - Tidskrav på systemets responsens i forskellige situationer
+En søgning skal kunne gentages ved afvisning et nærmere defineret antal gange. Hvis søgningen kontinuerligt fejler, skal programmet gå videre til næste ord eller hjemmeside, afhængig af, hvor i programmets afvikling afvisningen opstår. 
+   
+Der skal logges besked om afvisningen på mail og i logsystem.
 
-6. **Kvalitetsfaktorer**
-   - Argument for hver kvalitetsfaktor.
-   - Hvad skal gøres for at opnå en bestemt kvalitetsfaktor.
-   - Visse krav modarbejder hinanden.
-   - Vigtighed angives som tal fra 1 til 5. - Hvilke faktorer vurderes (Pålidelighed, Vedligeholdelsesvenlighed, Udvidelsesvenlighed, Bruger-
-     venlighed, Genbrugbarhed, Integritet, Effektivitet) - Hvilken kvalitet ønskes opnået på den enkelte faktor og hvordan opnås den
-     6.1 _Pålidelighed_
-   - Fejl i produktet.
-   - Nøjagtighed.
-   - Håndtering af fejlbetjening.
+### 4. **Eksterne grænseflade krav**
 
-     6.2 _Vedligeholdelsesvenlighed_
+4.1. _Bruger grænseflade_
 
-   - Hvor lang tid tager det at finde en fejl.
-   - Hvor nemt er det at lave en mindre tilpasning til et ændret behov.
+Systemet vil bestå af en webbaseret brugergrænseflade, som kan betjenes via mus eller keyboard.
 
-     6.3 _Udvidelsesvenlighed_
+Der er ingen særlige krav til betjening defineret.
 
-   - Hvor nemt er det at lave en egentlig udvidelse af produktet.
+Administratorer skal kunne oprette nye søgninger samt definere tidspunkter for den automatiske overvågning.
 
-     6.4 _Brugervenlighed_
+Analytikere vil skulle have adgang til til søgegænsefladen samt data-view af de allerede foretagne søgningen.
 
-   - Hvor lang tid tager det for en ny bruger at lære at betjene produktet, mm.
+4.3. _Software grænseflade_
+- Applikationen vil køre som to sammenkædede Docker-containere. 
+Den ene vil indeholde databasen, mens den anden hoster API og frontend.
 
-     6.5 _Genbrugbarhed_
+### 5. **Kvalitetsfaktorer**
+- Argument for hver kvalitetsfaktor.
+- Hvad skal gøres for at opnå en bestemt kvalitetsfaktor.
+- Visse krav modarbejder hinanden.
+- Vigtighed angives som tal fra 1 til 5. - Hvilke faktorer vurderes (Pålidelighed, Vedligeholdelsesvenlighed, Udvidelsesvenlighed, Bruger-
+  venlighed, Genbrugbarhed, Integritet, Effektivitet) - Hvilken kvalitet ønskes opnået på den enkelte faktor og hvordan opnås den
 
-   - Skal dele af programmet laves med henblik på at kunne bruges andetsteds.
+5.1 _Pålidelighed_
 
-     6.6 _Effektivitet_
+- Fejl i produktet.
+- Nøjagtighed.
+- Håndtering af fejlbetjening.
 
-   - Krav der ikke naturligt falder ind under de tidligere punkter.
-     - Hvilke dele af produktet skal prioriteres høj effektivitet.
+5.2 _Vedligeholdelsesvenlighed_
 
-7. **Andre krav**
-   - Øvrige endnu ikke nævnte krav
+- Hvor lang tid tager det at finde en fejl.
+- Hvor nemt er det at lave en mindre tilpasning til et ændret behov.
 
-8. **Levering**
-   - Til Flemming Sørensen senest Torsdag eftermiddag i den første uge.
+5.3 _Udvidelsesvenlighed_
 
-9. **Skærmbilleder**
-   - Det er hensigtsmæssigt at aflevere skærmbilleder med af systemet, det kan være håndtegnet eller andet.
+- Hvor nemt er det at lave en egentlig udvidelse af produktet.
 
-10. **E/R Diagram**
-    - I skal benytte et E/R diagram til at designe databasen. (se nedenfor for eks.)
+5.4 _Brugervenlighed_
 
-11. **Estimeret Plan**
+- Hvor lang tid tager det for en ny bruger at lære at betjene produktet, mm.
 
-12. **Underskrift**
+5.5 _Genbrugbarhed_
+
+- Skal dele af programmet laves med henblik på at kunne bruges andetsteds.
+
+5.6 _Effektivitet_
+
+- Krav der ikke naturligt falder ind under de tidligere punkter.
+- Hvilke dele af produktet skal prioriteres høj effektivitet.
+
+### 6. **Levering**
+Til Flemming Sørensen senest Torsdag eftermiddag i den første uge.
+
+### 7. **E/R Diagram**
+Et ER-diagram samt Use case og Flow Diagram ligger som dokumentation i kodebasen
+
+### 8. **Estimeret Plan**
+
+Det forventes at den nye funktionalitet kan leveres inden for et enkelt sprint.
+
+### 9. **Underskrift**
+Project Lead Momo
