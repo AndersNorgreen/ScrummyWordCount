@@ -55,7 +55,7 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 
 ---
 		
-2.3. *System begrænsninger*
+### 2.3. *System begrænsninger*
 
 Da programmet er opsat med automatisering (på to tidspunkter hver dag), vil realtidsovervågning ikke være muligt.
 
@@ -63,7 +63,7 @@ Samtidig vil der ikke være nogen bruger autorisation/adgangskontrol.
 
 Dataeksport vil heller ikke være en mulighed, men det vil være en af vores fremtidsmuligheder.
 		
-2.4. *Systemets fremtid*
+### 2.4. *Systemets fremtid*
 Programmets forventes at være i produktion indtil sikkerhedsfirmaet ikke længere har behov for det.
 
 Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervågning. 
@@ -92,7 +92,7 @@ Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervåg
 		-  Dokumentation
 		-  Afleveringsformat
 		
-2.8. *Forudsætninger*
+### 2.8. *Forudsætninger*
 Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCount-teamet adgang til at tilgå serveren.
 
 
@@ -111,7 +111,7 @@ Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCo
 
 4. **Eksterne grænseflade krav**
 
-	4.1. *Bruger grænseflade*
+### 4.1. *Bruger grænseflade*
   Systemet vil bestå af en webbaseret brugergrænseflade, som kan betjenes via mus eller keyboard.
   Der er ingen særlige krav til betjening defineret.
 
@@ -149,15 +149,14 @@ Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCo
 7. **Andre krav**
 	-  Øvrige endnu ikke nævnte krav
 
-8. **Levering**
+### 8. **Levering**
 	- Til Flemming Sørensen senest Torsdag eftermiddag i den første uge.
 
 9. **Skærmbilleder**
 	- Det er hensigtsmæssigt at aflevere skærmbilleder med af systemet, det kan være håndtegnet eller andet.
 
-10. **E/R Diagram**
-	- I skal benytte et E/R diagram til at designe databasen. (se nedenfor for eks.) 
-
+### 10. **E/R Diagram**
+  Et ER-diagram samt Use case og Flow Diagram ligger som dokumentation i kodebasen
 11. **Estimeret Plan**
 
 12. **Underskrift**
