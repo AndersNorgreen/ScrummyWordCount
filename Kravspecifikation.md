@@ -112,31 +112,8 @@ Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCo
 4. **Eksterne grænseflade krav**
 
 	4.1. *Bruger grænseflade*
-	-  Krav til måden programmet betjenes på: Menuer/ mus/ tastatur.
-	- Forskellige brugeres rettigheder til brug af forskellige funktioner.
-	
-	4.2. *Hardware grænseflade*
-	- Hvordan er delene i systemet hardwaremæssigt bygget sammen
-	- På hvilken elektrisk form optræder informationerne. 
-		-  Protokol, netværkstype (evt. bilagshenvisning)
-		-  I/O-karakteristika (evt. bilagshenvisning) (programmør)
-		
-	4.3. *Software grænseflade*
-	- Operativsystemet som programmellet skal køre under.
-	- Benyttelse af prædefinerede softwaremoduler.
-	- Grænseflade til anden del af programmet, hvis projektet er en del af et større system.
-		-  Operativsystem
-		
-	4.4. *Kommunikations grænseflade*
-	De fleste elever har ikke noget her.)
-	- Overordnet kommunikationsprotokol.
-	- Detaljeret kommunikationsprotokol, hvis det er et krav fra kunden, evt. under specifikationer.
-
-
-5. **Krav til programmellets ydelse**
-	- Specifikke tidskrav til udførelse af bestemte funktioner.
-	- Krav til det eksekverbare programs størrelse.
-		-  Tidskrav på systemets responsens i forskellige situationer
+  Systemet vil bestå af en webbaseret brugergrænseflade, som kan betjenes via mus eller keyboard.
+  Der er ingen særlige krav til betjening defineret.
 
 6. **Kvalitetsfaktorer**
 	- Argument for hver kvalitetsfaktor.
