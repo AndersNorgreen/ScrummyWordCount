@@ -20,11 +20,13 @@
 
 ### 1.3 Læsevejledning
 
-  Kravspecifikationen er organiseret således:
 
-  1. **Indledning** — formål, referencer og læsevejledning
-  2. **Generel beskrivelse** — systemoverblik, funktioner, begrænsninger og brugerprofiler
-  3. **Specifikke krav** — funktionelle krav med detaljeret beskrivelse
+  Kravspecifikationen er organiseret således:
+  
+
+  1. **Indledning** - formål, referencer og læsevejledning
+  2. **Generel beskrivelse** - systemoverblik, funktioner, begrænsninger og brugerprofiler
+  3. **Specifikke krav** - funktionelle krav med detaljeret beskrivelse
 
 
 --- 
