@@ -71,7 +71,7 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 
 - Opsætter og vedligeholder lister af hjemmesider og søgeord
 - Læser og arbejder med søgeresultaterne
-- Ingen teknisk baggrund krævet — betjener systemet via webbrowser
+- Ingen teknisk baggrund krævet - betjener systemet via webbrowser
 - Adgang via webapplikation i browser
 
 **Administrator**
