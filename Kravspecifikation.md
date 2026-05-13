@@ -22,7 +22,6 @@
 
 
   Kravspecifikationen er organiseret således:
-  
 
   1. **Indledning** - formål, referencer og læsevejledning
   2. **Generel beskrivelse** - systemoverblik, funktioner, begrænsninger og brugerprofiler
@@ -43,12 +42,18 @@
   - Kort beskrivelse af softwaren.
   -  Det totale HW + SW (verdensbillede)
   -  Tilhørende forklaring
-		
-2.2. *System funktion
-	- En lidt grundigere beskrivelse af programmet, uden at berøre specifikke krav til detaljer.
-	- Evt. data-flow-diagrammer og/eller tilstandsdiagrammer.
-		-  Beskrivelse af programmets funktionalitet er (som fritekst)
-		-  Evt. suppleret med grafisk visning af systemets overordnede struktur
+
+---
+
+### 2.2 System funktion
+	
+Brugeren indtaster en liste af URL'er og søgeord i UI'et, som gemmes i databasen.
+
+Systemet scanner automatisk alle URL'er for alle søgeord to gange dagligt via automatiske jobs i C# API'en, som scraper de ønskede sider og gemmer resultaterne i databasen. 
+
+Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail. 
+
+---
 		
 2.3. *System begrænsninger*
 	- Beskrivelse af de ting programmet ikke skal kunne. 
