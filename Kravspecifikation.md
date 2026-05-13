@@ -65,12 +65,25 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 	-  Udvidelsesmuligheder
 	-  Levetid / perspektivering
 		
-2.5. *Brugerprofil*
-	- Hvem skal bruge systemet.
-	- Stilles der krav til erfaring med edb-udstyr.
-		- Opdeling i brugergrupper
-		- Deres forudsætninger
-		- Adgangsform
+### 2.5 Brugerprofil
+
+**Analytiker**
+
+- Opsætter og vedligeholder lister af hjemmesider og søgeord
+- Læser og arbejder med søgeresultaterne
+- Ingen teknisk baggrund krævet — betjener systemet via webbrowser
+- Adgang via webapplikation i browser
+
+**Administrator**
+
+- Ansvarlig for teknisk drift, konfiguration og fejlfinding
+- Har teknisk forståelse af systemets arkitektur
+- Adgang til server, database og logfiler direkte
+
+**Stakeholder**
+- Beslutter om systemet opfylder forretningsbehov
+- Har ikke nødvendigvis teknisk baggrund
+- Primær kontaktperson for kravafklaring og videreudvikling
 		
 2.6. *Krav til udviklingsforløbet*
 	- Krav fra såvel udvikleren som kunden.
