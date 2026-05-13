@@ -55,7 +55,7 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 
 ---
 		
-2.3. *System begrænsninger*
+### 2.3. *System begrænsninger*
 
 Da programmet er opsat med automatisering (på to tidspunkter hver dag), vil realtidsovervågning ikke være muligt.
 
@@ -63,7 +63,7 @@ Samtidig vil der ikke være nogen bruger autorisation/adgangskontrol.
 
 Dataeksport vil heller ikke være en mulighed, men det vil være en af vores fremtidsmuligheder.
 		
-2.4. *Systemets fremtid*
+### 2.4. *Systemets fremtid*
 Programmets forventes at være i produktion indtil sikkerhedsfirmaet ikke længere har behov for det.
 
 Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervågning. 
@@ -85,14 +85,12 @@ Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervåg
 		-  Metoder (evt. SPU metoden)
 		-  Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
 		
-2.7. *Omfang af kundeleverancer*
-	- Hvor meget af det samlede system skal leveres til kunden.
-	- Hvor meget af dokumentationen skal leveres til kunden.
-		-  Produkt
-		-  Dokumentation
-		-  Afleveringsformat
+### 2.7. *Omfang af kundeleverancer*
+ScrummyWordCount-teamet leverer et færdigt system der skal ligges på kundens server.
+Kunden vil hermed også modtage dokumentation i form af Manualer og Produktbeskrivelse.
+
 		
-2.8. *Forudsætninger*
+### 2.8. *Forudsætninger*
 Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCount-teamet adgang til at tilgå serveren.
 
 
