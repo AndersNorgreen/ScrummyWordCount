@@ -2,70 +2,167 @@
 1. **Indledning**
 
 	1.1. *Formål*
-	-  Kort målbeskrivelse (hvis det er svendeprøve, så tydeliggør dette)
-	-  Navn på produkt
-	-  Kunde, leverandør og producent
-	-  Regler for ændringer af kravspecifikationen
-	-  Afleveringstidspunkt for kravspecifikationen og projekt
+	- Hvad skal udvikles.
+	- Hvad skal det bruges til.
+	- Hvem er udvikleren.
+	- Hvem er kunden.
+		-  Kort målbeskrivelse (hvis det er svendeprøve, så tydeliggør dette)
+		-  Navn på produkt
+		-  Kunde, leverandør og producent
+		-  Regler for ændringer af kravspecifikationen
+		-  Afleveringstidspunkt for kravspecifikationen og projekt
+		
 	1.2. *Referencer*
-	-  Tidligere dokumenter
-	-  Oplysning om kilder der refereres til i kravspecifikationen
-	2.1. *Læsevejledning*
-	-  Beskrivelse af kravspecifikationens indhold
-	-  Hvordan er indholdet organiseret (rækkefølge)
+	- Kundens oplæg.
+	- Standarder og andre referencer, der skal følges, som f.eks. SPU-bog.
+		-  Tidligere dokumenter
+		-  Oplysning om kilder der refereres til i kravspecifikationen
+		
+	1.3. *Læsevejledning*
+	- Kort beskrivelse af hvordan kravspecifikationen er organiseret (f.eks. om det følger SPU modellen eller en afart af denne.
+		-  Beskrivelse af kravspecifikationens indhold
+		-  Hvordan er indholdet organiseret (rækkefølge)
+
 2. **General Beskrivelse**
 
 	2.1. *Systembeskrivelse*
-	-  Det totale HW + SW (verdensbillede)
-	-  Tilhørende forklaring
+	- Verdensbillede, en tegning af det totale system.
+	- Kort beskrivelse af hardwaren.
+	- Kort beskrivelse af softwaren.
+		-  Det totale HW + SW (verdensbillede)
+		-  Tilhørende forklaring
+		
 	2.2. *System funktion
-	-  Beskrivelse af programmets funktionalitet er (som fritekst)
-	-  Evt. suppleret med grafisk visning af systemets overordnede struktur
+	- En lidt grundigere beskrivelse af programmet, uden at berøre specifikke krav til detaljer.
+	- Evt. data-flow-diagrammer og/eller tilstandsdiagrammer.
+		-  Beskrivelse af programmets funktionalitet er (som fritekst)
+		-  Evt. suppleret med grafisk visning af systemets overordnede struktur
+		
 	2.3. *System begrænsninger*
-	-  Opgaver som kunne opfattes som værende en del af systemet, men ikke er medtaget pga. tidsmæssige, økonomiske og ressourcemæssige årsager
+	- Beskrivelse af de ting programmet ikke skal kunne. 
+		-  Opgaver som kunne opfattes som værende en del af systemet, men ikke er medtaget pga. tidsmæssige, økonomiske og ressourcemæssige årsager
+		
 	2.4. *Systemets fremtid*
-	-  Udvidelsesmuligheder
-	-  Levetid / perspektivering
+	- Programmets forventede levetid.
+	- Udvidelsesmuligheder i senere versioner. Er der konkrete ting, der skal tages højde for nu.
+		-  Udvidelsesmuligheder
+		-  Levetid / perspektivering
+		
 	2.5. *Brugerprofil*
-	-  Opdeling i brugergrupper
-	-  Deres forudsætninger
-	-  Adgangsform
+	- Hvem skal bruge systemet.
+	- Stilles der krav til erfaring med edb-udstyr.
+		- Opdeling i brugergrupper
+		- Deres forudsætninger
+		- Adgangsform
+		
 	2.6. *Krav til udviklingsforløbet*
-	-  Metoder (evt. SPU metoden)
-	-  Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
+	- Krav fra såvel udvikleren som kunden.
+	- Anvendelse af vejledninger, designmetoder, standarder.
+	- Programmeringssprog.
+	- Review.
+	- Hvilken dokumentation, skal der udarbejdes.
+	- Hvordan skal ændringer i kravspecifikationen håndteres.
+		-  Metoder (evt. SPU metoden)
+		-  Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
+		
 	2.7. *Omfang af kundeleverancer*
-	-  Produkt
-	-  Dokumentation
-	-  Afleveringsformat
+	- Hvor meget af det samlede system skal leveres til kunden.
+	- Hvor meget af dokumentationen skal leveres til kunden.
+		-  Produkt
+		-  Dokumentation
+		-  Afleveringsformat
+		
 	2.8. *Forudsætninger*
-	-  SW eller HW stillet til rådighed
-	-  Kunderepræsentant til rådighed
+	- Udstyr som kunden skal stille tilrådighed under udviklingen.
+	- Personer som kunden skal stille til rådighed.
+		-  SW eller HW stillet til rådighed
+		-  Kunderepræsentant til rådighed
+
 3. **Specifikke Krav**
 
 	3.1. *Definitioner*
-	-  Design af specielle kommunikationsprotokoller (programmør)
+	- Formatet på væsentlige data, som kunden ønsker fastlagt fra starten.
+		-  Design af specielle kommunikationsprotokoller (programmør)
+		
 	3.2. *Funktionelle krav*
-	-  Systematisk beskrivelse af alle funktionalitet er i systemet evt. med punkter og underpunkter
-	-  Skitse af komplet brugergrænseflade
+	- Når I skal til dette punkt så tjek længere nede, der står der oplysninger om USE CASES, det ville være smart at placere disse her.
+	- Beskrivelse af hver af de funktionaliteter, som programmet består af. Det være sig funktionaliteter, som brugeren oplever, men også funktionaliteter, der er væsentlige for programmets funktion.
+	- Beskriv hvis der er noget særligt omhandlende input og output fra HW til SW eller omvendt.
+		-  Systematisk beskrivelse af alle funktionalitet er i systemet evt. med punkter og underpunkter
+		-  Skitse af komplet brugergrænseflade
+
 4. **Eksterne grænseflade krav**
 
-	4.1. *HW grænseflade*
-	-  I/O-karakteristika (evt. bilagshenvisning) (programmør)
-	4.2. *Kommunikationsgrænseflade*
-	-  Protokol, netværkstype (evt. bilagshenvisning)
-	4.3. *SW grænseflade*
-	-  Operativsystem
+	4.1. *Bruger grænseflade*
+	-  Krav til måden programmet betjenes på: Menuer/ mus/ tastatur.
+	- Forskellige brugeres rettigheder til brug af forskellige funktioner.
+	
+	4.2. *Hardware grænseflade*
+	- Hvordan er delene i systemet hardwaremæssigt bygget sammen
+	- På hvilken elektrisk form optræder informationerne. 
+		-  Protokol, netværkstype (evt. bilagshenvisning)
+		-  I/O-karakteristika (evt. bilagshenvisning) (programmør)
+		
+	4.3. *Software grænseflade*
+	- Operativsystemet som programmellet skal køre under.
+	- Benyttelse af prædefinerede softwaremoduler.
+	- Grænseflade til anden del af programmet, hvis projektet er en del af et større system.
+		-  Operativsystem
+		
+	4.4. *Kommunikations grænseflade*
+	De fleste elever har ikke noget her.)
+	- Overordnet kommunikationsprotokol.
+	- Detaljeret kommunikationsprotokol, hvis det er et krav fra kunden, evt. under specifikationer.
+
+
 5. **Krav til programmellets ydelse**
-	-  Tidskrav på systemets responsens i forskellige situationer
+	- Specifikke tidskrav til udførelse af bestemte funktioner.
+	- Krav til det eksekverbare programs størrelse.
+		-  Tidskrav på systemets responsens i forskellige situationer
+
 6. **Kvalitetsfaktorer**
-	-  Hvilke faktorer vurderes (Pålidelighed, Vedligeholdelsesvenlighed, Udvidelsesvenlighed, Bruger-
-	venlighed, Genbrugbarhed, Integritet, Effektivitet)
-	-  Hvilken kvalitet ønskes opnået på den enkelte faktor og hvordan opnås den
+	- Argument for hver kvalitetsfaktor.
+	- Hvad skal gøres for at opnå en bestemt kvalitetsfaktor.
+	- Visse krav modarbejder hinanden.
+	- Vigtighed angives som tal fra 1 til 5.
+		-  Hvilke faktorer vurderes (Pålidelighed, Vedligeholdelsesvenlighed, Udvidelsesvenlighed, Bruger-
+		venlighed, Genbrugbarhed, Integritet, Effektivitet)
+		-  Hvilken kvalitet ønskes opnået på den enkelte faktor og hvordan opnås den
+		
+	6.1 *Pålidelighed*
+	- Fejl i produktet.
+	- Nøjagtighed.
+	- Håndtering af fejlbetjening.
+	
+	6.2 *Vedligeholdelsesvenlighed*
+	- Hvor lang tid tager det at finde en fejl.
+	- Hvor nemt er det at lave en mindre tilpasning til et ændret behov.
+	
+	6.3 *Udvidelsesvenlighed*
+	- Hvor nemt er det at lave en egentlig udvidelse af produktet.
+	
+	6.4 *Brugervenlighed*
+	- Hvor lang tid tager det for en ny bruger at lære at betjene produktet, mm.
+	
+	6.5 *Genbrugbarhed*
+	- Skal dele af programmet laves med henblik på at kunne bruges andetsteds.
+	
+	6.6 *Effektivitet*
+	- Krav der ikke naturligt falder ind under de tidligere punkter. 
+		- Hvilke dele af produktet skal prioriteres høj effektivitet.
+
 7. **Andre krav**
-	-  Øvrige endnu ikke nævnte krav.
-8. **Underskrift**
-   
-**Bilag**
-	-  Der skal være henvisninger til alle kravspecifikationens bilag
-	-  Ordliste
-	-  Estimeret tidsplan for projektet
+	-  Øvrige endnu ikke nævnte krav
+
+8. **Levering**
+	- Til Flemming Sørensen senest Torsdag eftermiddag i den første uge.
+
+9. **Skærmbilleder**
+	- Det er hensigtsmæssigt at aflevere skærmbilleder med af systemet, det kan være håndtegnet eller andet.
+
+10. **E/R Diagram**
+	- I skal benytte et E/R diagram til at designe databasen. (se nedenfor for eks.) 
+
+11. **Estimeret Plan**
+
+12. **Underskrift**
