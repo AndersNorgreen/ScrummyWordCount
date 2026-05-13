@@ -72,30 +72,29 @@ Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervåg
 
 ---
 
-### 2.5. _Brugerprofil_
+### 2.5 Brugerprofil
 
-    - Hvem skal bruge systemet.
-    - Stilles der krav til erfaring med edb-udstyr.
-    	- Opdeling i brugergrupper
-    	- Deres forudsætninger
-    	- Adgangsform
+**Analytiker**
 
----
+- Opsætter og vedligeholder lister af hjemmesider og søgeord
+- Læser og arbejder med søgeresultaterne
+- Ingen teknisk baggrund krævet - betjener systemet via webbrowser
+- Adgang via webapplikation i browser
 
-### 2.6 Krav til udviklingsforløbet
+**Administrator**
 
-- **Metode:** Scrum
-- **Versionsstyring:** Git / GitHub
-- **Programmeringssprog:** TypeScript (frontend), C# (backend)
-- **Dokumentation:** Casebeskrivelse, kravspecifikation, testrapport
-- **Review:** Pull requests gennemgås af mindst ét andet teammedlem inden merge
-- **Ændringer i kravspec:** Godkendes af PO og Project Lead i fællesskab.
+- Ansvarlig for teknisk drift, konfiguration og fejlfinding
+- Har teknisk forståelse af systemets arkitektur
+- Adgang til server, database og logfiler direkte
 
----
+**Stakeholder**
 
-2.7. _Omfang af kundeleverancer_ - Hvor meget af det samlede system skal leveres til kunden. - Hvor meget af dokumentationen skal leveres til kunden. - Produkt - Dokumentation - Afleveringsformat
-2.8. _Forudsætninger_
-Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCount-teamet adgang til at tilgå serveren.
+- Beslutter om systemet opfylder forretningsbehov
+- Har ikke nødvendigvis teknisk baggrund
+- Primær kontaktperson for kravafklaring og videreudvikling
+  2.6. _Krav til udviklingsforløbet_ - Krav fra såvel udvikleren som kunden. - Anvendelse af vejledninger, designmetoder, standarder. - Programmeringssprog. - Review. - Hvilken dokumentation, skal der udarbejdes. - Hvordan skal ændringer i kravspecifikationen håndteres. - Metoder (evt. SPU metoden) - Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
+  2.7. _Omfang af kundeleverancer_ - Hvor meget af det samlede system skal leveres til kunden. - Hvor meget af dokumentationen skal leveres til kunden. - Produkt - Dokumentation - Afleveringsformat
+  2.8. _Forudsætninger_ - Udstyr som kunden skal stille tilrådighed under udviklingen. - Personer som kunden skal stille til rådighed. - SW eller HW stillet til rådighed - Kunderepræsentant til rådighed
 
 3. **Specifikke Krav**
 
