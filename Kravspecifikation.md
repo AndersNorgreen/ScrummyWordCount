@@ -1,5 +1,6 @@
 ### Checklist
 1. **Indledning**
+
 	1.1. *Formål*
 	-  Kort målbeskrivelse (hvis det er svendeprøve, så tydeliggør dette)
 	-  Navn på produkt
@@ -13,6 +14,7 @@
 	-  Beskrivelse af kravspecifikationens indhold
 	-  Hvordan er indholdet organiseret (rækkefølge)
 2. **General Beskrivelse**
+
 	2.1. *Systembeskrivelse*
 	-  Det totale HW + SW (verdensbillede)
 	-  Tilhørende forklaring
@@ -39,12 +41,14 @@
 	-  SW eller HW stillet til rådighed
 	-  Kunderepræsentant til rådighed
 3. **Specifikke Krav**
+
 	3.1. *Definitioner*
 	-  Design af specielle kommunikationsprotokoller (programmør)
 	3.2. *Funktionelle krav*
 	-  Systematisk beskrivelse af alle funktionalitet er i systemet evt. med punkter og underpunkter
 	-  Skitse af komplet brugergrænseflade
 4. **Eksterne grænseflade krav**
+
 	4.1. *HW grænseflade*
 	-  I/O-karakteristika (evt. bilagshenvisning) (programmør)
 	4.2. *Kommunikationsgrænseflade*
