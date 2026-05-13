@@ -56,14 +56,17 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 ---
 		
 2.3. *System begrænsninger*
-	- Beskrivelse af de ting programmet ikke skal kunne. 
-	-  Opgaver som kunne opfattes som værende en del af systemet, men ikke er medtaget pga. tidsmæssige, økonomiske og ressourcemæssige årsager
+
+Da programmet er opsat med automatisering (på to tidspunkter hver dag), vil realtidsovervågning ikke være muligt.
+
+Samtidig vil der ikke være nogen bruger autorisation/adgangskontrol.
+
+Dataeksport vil heller ikke være en mulighed, men det vil være en af vores fremtidsmuligheder.
 		
 2.4. *Systemets fremtid*
-	- Programmets forventede levetid.
-	- Udvidelsesmuligheder i senere versioner. Er der konkrete ting, der skal tages højde for nu.
-	-  Udvidelsesmuligheder
-	-  Levetid / perspektivering
+Programmets forventes at være i produktion indtil sikkerhedsfirmaet ikke længere har behov for det.
+
+Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervågning. 
 		
 2.5. *Brugerprofil*
 	- Hvem skal bruge systemet.
@@ -89,11 +92,9 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 		-  Dokumentation
 		-  Afleveringsformat
 		
-	2.8. *Forudsætninger*
-	- Udstyr som kunden skal stille tilrådighed under udviklingen.
-	- Personer som kunden skal stille til rådighed.
-		-  SW eller HW stillet til rådighed
-		-  Kunderepræsentant til rådighed
+2.8. *Forudsætninger*
+Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCount-teamet adgang til at tilgå serveren.
+
 
 3. **Specifikke Krav**
 
