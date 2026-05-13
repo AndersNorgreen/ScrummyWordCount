@@ -109,32 +109,9 @@ Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCo
 
 4. **Eksterne grænseflade krav**
 
-	4.1. *Bruger grænseflade*
-	-  Krav til måden programmet betjenes på: Menuer/ mus/ tastatur.
-	- Forskellige brugeres rettigheder til brug af forskellige funktioner.
-	
-	4.2. *Hardware grænseflade*
-	- Hvordan er delene i systemet hardwaremæssigt bygget sammen
-	- På hvilken elektrisk form optræder informationerne. 
-		-  Protokol, netværkstype (evt. bilagshenvisning)
-		-  I/O-karakteristika (evt. bilagshenvisning) (programmør)
-		
-	4.3. *Software grænseflade*
-	- Operativsystemet som programmellet skal køre under.
-	- Benyttelse af prædefinerede softwaremoduler.
-	- Grænseflade til anden del af programmet, hvis projektet er en del af et større system.
-		-  Operativsystem
-		
-	4.4. *Kommunikations grænseflade*
-	De fleste elever har ikke noget her.)
-	- Overordnet kommunikationsprotokol.
-	- Detaljeret kommunikationsprotokol, hvis det er et krav fra kunden, evt. under specifikationer.
-
-
-5. **Krav til programmellets ydelse**
-	- Specifikke tidskrav til udførelse af bestemte funktioner.
-	- Krav til det eksekverbare programs størrelse.
-		-  Tidskrav på systemets responsens i forskellige situationer
+### 4.1. *Bruger grænseflade*
+  Systemet vil bestå af en webbaseret brugergrænseflade, som kan betjenes via mus eller keyboard.
+  Der er ingen særlige krav til betjening defineret.
 
 6. **Kvalitetsfaktorer**
 	- Argument for hver kvalitetsfaktor.
@@ -170,15 +147,14 @@ Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCo
 7. **Andre krav**
 	-  Øvrige endnu ikke nævnte krav
 
-8. **Levering**
+### 8. **Levering**
 	- Til Flemming Sørensen senest Torsdag eftermiddag i den første uge.
 
 9. **Skærmbilleder**
 	- Det er hensigtsmæssigt at aflevere skærmbilleder med af systemet, det kan være håndtegnet eller andet.
 
-10. **E/R Diagram**
-	- I skal benytte et E/R diagram til at designe databasen. (se nedenfor for eks.) 
-
+### 10. **E/R Diagram**
+  Et ER-diagram samt Use case og Flow Diagram ligger som dokumentation i kodebasen
 11. **Estimeret Plan**
 
 12. **Underskrift**
