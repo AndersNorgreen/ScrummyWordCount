@@ -54,47 +54,22 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 
 ---
 
-### 2.3. _System begrænsninger_
+2.3. _System begrænsninger_
 
 Da programmet er opsat med automatisering (på to tidspunkter hver dag), vil realtidsovervågning ikke være muligt.
 
 Samtidig vil der ikke være nogen bruger autorisation/adgangskontrol.
 
 Dataeksport vil heller ikke være en mulighed, men det vil være en af vores fremtidsmuligheder.
-
----
-
-### 2.4. _Systemets fremtid_
-
+2.4. _Systemets fremtid_
 Programmets forventes at være i produktion indtil sikkerhedsfirmaet ikke længere har behov for det.
 
 Fremtidsmuligheder vil være features som Data eksport, og evt. realtidsovervågning.
-
----
-
-### 2.5 Brugerprofil
-
-**Analytiker**
-
-- Opsætter og vedligeholder lister af hjemmesider og søgeord
-- Læser og arbejder med søgeresultaterne
-- Ingen teknisk baggrund krævet - betjener systemet via webbrowser
-- Adgang via webapplikation i browser
-
-**Administrator**
-
-- Ansvarlig for teknisk drift, konfiguration og fejlfinding
-- Har teknisk forståelse af systemets arkitektur
-- Adgang til server, database og logfiler direkte
-
-**Stakeholder**
-
-- Beslutter om systemet opfylder forretningsbehov
-- Har ikke nødvendigvis teknisk baggrund
-- Primær kontaktperson for kravafklaring og videreudvikling
-  2.6. _Krav til udviklingsforløbet_ - Krav fra såvel udvikleren som kunden. - Anvendelse af vejledninger, designmetoder, standarder. - Programmeringssprog. - Review. - Hvilken dokumentation, skal der udarbejdes. - Hvordan skal ændringer i kravspecifikationen håndteres. - Metoder (evt. SPU metoden) - Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
-  2.7. _Omfang af kundeleverancer_ - Hvor meget af det samlede system skal leveres til kunden. - Hvor meget af dokumentationen skal leveres til kunden. - Produkt - Dokumentation - Afleveringsformat
-  2.8. _Forudsætninger_ - Udstyr som kunden skal stille tilrådighed under udviklingen. - Personer som kunden skal stille til rådighed. - SW eller HW stillet til rådighed - Kunderepræsentant til rådighed
+2.5. _Brugerprofil_ - Hvem skal bruge systemet. - Stilles der krav til erfaring med edb-udstyr. - Opdeling i brugergrupper - Deres forudsætninger - Adgangsform
+2.6. _Krav til udviklingsforløbet_ - Krav fra såvel udvikleren som kunden. - Anvendelse af vejledninger, designmetoder, standarder. - Programmeringssprog. - Review. - Hvilken dokumentation, skal der udarbejdes. - Hvordan skal ændringer i kravspecifikationen håndteres. - Metoder (evt. SPU metoden) - Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
+2.7. _Omfang af kundeleverancer_ - Hvor meget af det samlede system skal leveres til kunden. - Hvor meget af dokumentationen skal leveres til kunden. - Produkt - Dokumentation - Afleveringsformat
+2.8. _Forudsætninger_
+Kunden skal stille en server til rådighed, og give de relevante i ScrummyWordCount-teamet adgang til at tilgå serveren.
 
 3. **Specifikke Krav**
 
