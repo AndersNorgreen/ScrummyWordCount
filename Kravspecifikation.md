@@ -1,61 +1,71 @@
-### Checklist
-1. **Indledning**
+# 1. Indledning
 
-	1.1. *Formål*
-	- Hvad skal udvikles.
-	- Hvad skal det bruges til.
-	- Hvem er udvikleren.
-	- Hvem er kunden.
-		-  Kort målbeskrivelse (hvis det er svendeprøve, så tydeliggør dette)
-		-  Navn på produkt
-		-  Kunde, leverandør og producent
-		-  Regler for ændringer af kravspecifikationen
-		-  Afleveringstidspunkt for kravspecifikationen og projekt
-		
-	1.2. *Referencer*
-	- Kundens oplæg.
-	- Standarder og andre referencer, der skal følges, som f.eks. SPU-bog.
-		-  Tidligere dokumenter
-		-  Oplysning om kilder der refereres til i kravspecifikationen
-		
-	1.3. *Læsevejledning*
-	- Kort beskrivelse af hvordan kravspecifikationen er organiseret (f.eks. om det følger SPU modellen eller en afart af denne.
-		-  Beskrivelse af kravspecifikationens indhold
-		-  Hvordan er indholdet organiseret (rækkefølge)
+### 1.1. *Formål*
 
-2. **General Beskrivelse**
+  Denne kravspecifikation beskriver kravene til videreudviklingen af systemet **ScrummyWordCount**.
+	Systemet er udviklet til et anerkendt it-sikkerhedsfirma, som ønsker at automatisere overvågning af hjemmesider for forekomster af mistænkelige søgeord. V1 af systenmet er allerede 		  	leveret. Denne kravspecifikation omhandlder de nye krav som kunden ønsker implementeret til en fremtidig V2.
 
-	2.1. *Systembeskrivelse*
-	- Verdensbillede, en tegning af det totale system.
-	- Kort beskrivelse af hardwaren.
-	- Kort beskrivelse af softwaren.
-		-  Det totale HW + SW (verdensbillede)
-		-  Tilhørende forklaring
+  - **Produkt:** ScrummyWordCount v2
+  - **Kunde:** It-sikkerhedsfirma (anonymiseret)
+  - **Leverandør / producent:** ScrummyWordCount-teamet
+
+---
+
+### 1.2 Referencer
+
+ - Casebeskrivelse: `Casebeskrivelse.md`
+ - Eksisterende kodebase: `Source/ScrummyWordCountApi` og `scrummy-word-frontend`
+
+---
+
+### 1.3 Læsevejledning
+
+  Kravspecifikationen er organiseret således:
+
+  1. **Indledning** — formål, referencer og læsevejledning
+  2. **Generel beskrivelse** — systemoverblik, funktioner, begrænsninger og brugerprofiler
+  3. **Specifikke krav** — funktionelle krav med detaljeret beskrivelse
+
+
+--- 
+# 2. Generel beskrivelse
+
+### 2.1 Systembeskrivelse
+
+ScrummyWordCount er et webbaseret overvågningssystem bestående af en Next.js frontend, en C# .NET backend API og en PostgreSQL database, afviklet i Docker.
+
+---
+  
+  - Verdensbillede, en tegning af det totale system.
+  - Kort beskrivelse af hardwaren.
+  - Kort beskrivelse af softwaren.
+  -  Det totale HW + SW (verdensbillede)
+  -  Tilhørende forklaring
 		
-	2.2. *System funktion
+2.2. *System funktion
 	- En lidt grundigere beskrivelse af programmet, uden at berøre specifikke krav til detaljer.
 	- Evt. data-flow-diagrammer og/eller tilstandsdiagrammer.
 		-  Beskrivelse af programmets funktionalitet er (som fritekst)
 		-  Evt. suppleret med grafisk visning af systemets overordnede struktur
 		
-	2.3. *System begrænsninger*
+2.3. *System begrænsninger*
 	- Beskrivelse af de ting programmet ikke skal kunne. 
-		-  Opgaver som kunne opfattes som værende en del af systemet, men ikke er medtaget pga. tidsmæssige, økonomiske og ressourcemæssige årsager
+	-  Opgaver som kunne opfattes som værende en del af systemet, men ikke er medtaget pga. tidsmæssige, økonomiske og ressourcemæssige årsager
 		
-	2.4. *Systemets fremtid*
+2.4. *Systemets fremtid*
 	- Programmets forventede levetid.
 	- Udvidelsesmuligheder i senere versioner. Er der konkrete ting, der skal tages højde for nu.
-		-  Udvidelsesmuligheder
-		-  Levetid / perspektivering
+	-  Udvidelsesmuligheder
+	-  Levetid / perspektivering
 		
-	2.5. *Brugerprofil*
+2.5. *Brugerprofil*
 	- Hvem skal bruge systemet.
 	- Stilles der krav til erfaring med edb-udstyr.
 		- Opdeling i brugergrupper
 		- Deres forudsætninger
 		- Adgangsform
 		
-	2.6. *Krav til udviklingsforløbet*
+2.6. *Krav til udviklingsforløbet*
 	- Krav fra såvel udvikleren som kunden.
 	- Anvendelse af vejledninger, designmetoder, standarder.
 	- Programmeringssprog.
@@ -65,7 +75,7 @@
 		-  Metoder (evt. SPU metoden)
 		-  Dokumentationskrav (alt med sammenhængende indholdsfortegnelse)
 		
-	2.7. *Omfang af kundeleverancer*
+2.7. *Omfang af kundeleverancer*
 	- Hvor meget af det samlede system skal leveres til kunden.
 	- Hvor meget af dokumentationen skal leveres til kunden.
 		-  Produkt
