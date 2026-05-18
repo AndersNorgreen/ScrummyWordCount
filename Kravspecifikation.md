@@ -151,6 +151,21 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 		-  Tidskrav på systemets responsens i forskellige situationer
 
 6. **Kvalitetsfaktorer**
+	De primære kvalitetsfaktorer for programmet er pålidelighed og integritet, da programmet bliver brugt til sikkerhedsovervågning. Det er vigtigt at programmet er pålideligt og at dataene er korrekte.
+
+	***Pålidelighed:*** 4 - Det er vigtig at kunden kan stole på at programmet fungerer korrekt og at dataene er korrekte, da det er relateret til sikkerhedsovervågning.
+
+	***Vedligeholdelsesvenlighed:*** 3 - Programmet kræver ikke meget vedligehold da det er bygget på grundlæggende webteknologier som der ikke forventes at ske store ændringer i, men det er stadig vigtigt at det er nemt at vedligeholde for at sikre at det kan holdes opdateret og sikkert.
+
+	***Udvidelsesvenlighed:*** 2 - Det er ikke et krav at programmet skal kunne udvides meget, da det er bygget til et specifikt og afgrænsetformål
+
+	***Brugervenlighed:*** 4 - Det er vigtigt at programmet er nemt at bruge for kunden, da det er et værktøj der skal bruges i det daglige arbejde
+
+	***Genbrugbarhed:*** 1 - Det er ikke et krav at programmet skal kunne genbruges i andre sammenhænge, da det er bygget til et specifikt formål.
+
+	***Integritet:*** 4 - Det er vigtigt at dataene er korrekte og ikke kan manipuleres, da det er relateret til sikkerhedsovervågning.
+	
+
 	- Argument for hver kvalitetsfaktor.
 	- Hvad skal gøres for at opnå en bestemt kvalitetsfaktor.
 	- Visse krav modarbejder hinanden.
@@ -160,24 +175,37 @@ Hvis en side ikke kan scannes, logges fejlen og en advarsel sendes på mail.
 		-  Hvilken kvalitet ønskes opnået på den enkelte faktor og hvordan opnås den
 		
 	6.1 *Pålidelighed*
+ 	Der er begrænset kompleksitet i produktet og det er samtidig ikke et kritisk system. Så forventet nedetid
+	er minimnal. Og konsekvensen af kortere nedetid er begrænset.
+	
 	- Fejl i produktet.
 	- Nøjagtighed.
 	- Håndtering af fejlbetjening.
 	
 	6.2 *Vedligeholdelsesvenlighed*
+	Da produktet er foholdsvist simpelt så er fejlsøgning og mindre tilpasninger ikke særligt tidskrævende. Fejl vil typisk blive lokaliseret og patchet inden for 1 arbejdsdag. Og mindre tilpasninger vil typisk kunne implementeres inden for 1-2 arbejdsdage.
+
 	- Hvor lang tid tager det at finde en fejl.
-	- Hvor nemt er det at lave en mindre tilpasning til et ændret behov.
+	- Hvor nemt er det at lave en mindre tilspasning til et ændret behov.
 	
 	6.3 *Udvidelsesvenlighed*
+	Den overordnede arkitektur er simpel så det er ret nemt at tilføje ny funktionalit
+	
 	- Hvor nemt er det at lave en egentlig udvidelse af produktet.
 	
 	6.4 *Brugervenlighed*
+	En bruger med almindelig computererfaring vil kunne betjene produktet med minimal instruktion.
+
 	- Hvor lang tid tager det for en ny bruger at lære at betjene produktet, mm.
 	
 	6.5 *Genbrugbarhed*
+	**IKKE RELEVANT**
+
 	- Skal dele af programmet laves med henblik på at kunne bruges andetsteds.
 	
 	6.6 *Effektivitet*
+	**IKKE RELEVANT**
+
 	- Krav der ikke naturligt falder ind under de tidligere punkter. 
 		- Hvilke dele af produktet skal prioriteres høj effektivitet.
 
